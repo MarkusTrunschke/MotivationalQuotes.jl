@@ -1,3 +1,15 @@
+#####################################################
+################ THE MOTIVATE PACKAGE ###############
+# Author: Markus Trunschke                          #
+# Date of first version: 29.12.2023                 #
+# Contact: markus.trunschke@googlemail.com          #
+#####################################################
+# Notes: This very simple package is based on Stata #
+#        packages "motivate.ado" and                #
+#        and "demotivate.ado" from Kabira Namit     #
+#        (World Bank, knamit@worldbank.org)         #
+#####################################################
+
 # Motivate function
 function motivate_me(;print_quote::Bool = true,category::Union{String,Array} = [])
     
