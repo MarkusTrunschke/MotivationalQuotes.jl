@@ -1,11 +1,11 @@
-# Motivate
+# MotivateMe
 
 This fun package greets you with a random motivating quote. In case you feel too motivated you can use the `demotivate_me` command to bring you down to earth again.
 
 # Installation
 Via the Julia package manager:
 ```
-import Pkg; Pkg.add("Motivate")
+import Pkg; Pkg.add("MotivateMe")
 ```
 # Usage
 Use the following command to print a motivating quote

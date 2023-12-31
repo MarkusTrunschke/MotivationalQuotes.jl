@@ -1,9 +1,11 @@
-using Motivate
+using MotivateMe
 using Test
 
-@testset "Motivate.jl" begin
+@testset "MotivateMe.jl" begin
     # Write your tests here.
-    @test typeof(Motivate.motivate_me()) <: String
-    @test typeof(Motivate.demotivate_me()) <: String
-    @test typeof(Motivate.quoteselector(["A","B"])) <: String
+    @test typeof(MotivateMe.motivate_me()) == Nothing
+    @test typeof(MotivateMe.motivate_me(print_quote=false)) <: String
+    @test typeof(MotivateMe.demotivate_me()) == Nothing
+    @test typeof(MotivateMe.demotivate_me(print_quote=false)) <: String
+    @test typeof(MotivateMe.quoteselector(["A","B"])) <: String
 end

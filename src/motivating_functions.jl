@@ -15,7 +15,7 @@ function motivate_me(;print_quote::Bool = true,category::Union{String,Array} = [
     
     println(pwd())
     # Run motivator function
-    motivator(cate=category, types="motivate", print_quote=print_quote)
+    sel_quote = motivator(cate=category, types="motivate", print_quote=print_quote)
 
     if print_quote == true
         return nothing
@@ -28,7 +28,7 @@ end
 function demotivate_me(;print_quote::Bool = true,category::Union{String,Array} = [])
 
     # Run motivator function
-    motivator(cate=category, types="demotivate", print_quote=print_quote)
+    sel_quote = motivator(cate=category, types="demotivate", print_quote=print_quote)
 
     if print_quote == true
         return nothing
@@ -67,7 +67,13 @@ function quoteselector(quotelist::Vector{String})
     # Get random quote
     sel_quote = quotelist[rand(eachindex(quotelist))]
 
-    # Print random number
+    # Check if CSV.read added a second "\" in front of linebreaks and delete it if so
+    sel_quote = replace(sel_quote, "\\n" => "\n")
+
+    # There is probably a space after the linebreak. Drop it as well
+    sel_quote = replace(sel_quote, "\n " => "\n")
+
+    # Return selected quote
     return sel_quote
 end
 
@@ -75,7 +81,7 @@ end
 function loadquotes_mot(;cate::Union{String,Array}=[],types::String="motivate")
 
     # Load the list of (de-)motivational quotes (get path where the module is on the current system. It comes with the module file name which we need to remove and chop 3 additional characters off because of the ".jl"-ending.)
-    read_path = chop(pathof(Motivate),tail=length(string(@__MODULE__))+3)*"\\data\\mot_quotes.csv"
+    read_path = chop(pathof(MotivateMe),tail=length(string(@__MODULE__))+3)*"\\data\\mot_quotes.csv"
     quote_df = CSV.read(read_path, DataFrame;header = true)
 
     # Select quotes of a specific category and type
