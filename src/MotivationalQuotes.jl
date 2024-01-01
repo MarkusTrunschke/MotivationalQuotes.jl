@@ -14,7 +14,7 @@
 module MotivationalQuotes
 
     # Include dependencies
-    using Random, DataFrames, CSV
+    using Random, DataFrames, CSV, Downloads, JLD2, FileIO, Dates
 
     # Include other code files
     include("motivating_functions.jl")
