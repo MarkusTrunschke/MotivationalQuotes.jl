@@ -11,7 +11,7 @@
 #####################################################
 
 # Define module
-module MotivateMe
+module MotivationalQuotes
 
     # Include dependencies
     using Random, DataFrames, CSV
