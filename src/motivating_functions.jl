@@ -81,7 +81,7 @@ end
 function loadquotes_mot(;cate::Union{String,Array}=[],types::String="motivate")
 
     # Load the list of (de-)motivational quotes (get path where the module is on the current system. It comes with the module file name which we need to remove and chop 3 additional characters off because of the ".jl"-ending.)
-    read_path = chop(pathof(MotivateMe),tail=length(string(@__MODULE__))+3)*"\\data\\mot_quotes.csv"
+    read_path = joinpath(@__DIR__, "data", "mot_quotes.csv")
     quote_df = CSV.read(read_path, DataFrame;header = true)
 
     # Select quotes of a specific category and type
