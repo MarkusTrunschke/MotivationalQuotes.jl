@@ -1,25 +1,46 @@
 "quotes","cate","types"
-"I find that the harder I work, the more luck I seem to have \n (Thomas Jefferson)","general","motivate"
-"Success is not final, failure is not fatal. It is the courage to continue that counts. \n (Winston Churchill)","general","motivate"
-"If you are going through hell, keep going. \n (Winston Churchill)","general","motivate"
-"Patience and deep breaths are key, but so is Julia Discourse. \n (Unknown)","general","motivate"
-"Maybe Nick Cox has written something about this error? \n (Kabira Namit)","economics","motivate"
-"Nothing in the world is worth having or worth doing unless it means effort, pain, difficulty. I have never in my life envied a human being who led an easy life. I have envied a great many people who led difficult lives and led them well. \n (Theodore Roosevelt)","general","motivate"
-"I did not mess up the syntax. I just found 100 ways to specify it incorrectly. \n (Kabira Namit)","general","motivate"
-"It always seems impossible till it is done. \n (Nelson Mandela)","general","motivate"
-"If you were able to believe in Santa Claus for 8 years, you can believe in yourself for 5 minutes. \n (Unknown)","general","motivate"
-"I have failed over and over and over again in my life. And that is why I succeed. \n (Michael Jordan)","general","motivate"
-"Every Julia expert has had their fair share of errors. Keep at it! \n (Kabira Namit)","economics","motivate"
-"There are two kinds of people in this world: those who want to get things done and those who do not want to make mistakes. \n (John Maxwell)","general","motivate"
-"If we knew what we were doing, it would not be called research, would it? \n (Albert Einstein)","general","motivate"
-"We must accept finite disappointment but never lose infinite hope. \n (Martin Luther King)","general","motivate"
-"The only real mistake is the one from which we learn nothing. \n (Henry Ford)","general","motivate"
-"Try to live everyday like Elle Woods after Warner told her she was not smart enough for law school. \n (Marissa Kathryn)","general","motivate"
-"Failure is so important. We speak about success all the time. It is the ability to resist failure or use failure that often leads to greater success. I have met people who do not want to try for fear of failing. \n (Joanne K. Rowling)","general","motivate"
-"A person who never made a mistake never tried anything new. \n (Albert Einstein)","general","motivate"
-"Success consists of going from failure to failure without loss of enthusiasm. \n (Winston Churchill)","general","motivate"
-"There is beauty in every struggle that is your own. \n (Salvia Zeeshan)","general","demotivate"
-"All models are wrong but some are useful. \n (George Box)","general","demotivate"
+"I find that the harder I work, the more luck I seem to have 
+ (Thomas Jefferson)","general","motivate"
+"Success is not final, failure is not fatal. It is the courage to continue that counts. 
+ (Winston Churchill)","general","motivate"
+"If you are going through hell, keep going. 
+ (Winston Churchill)","general","motivate"
+"Patience and deep breaths are key, but so is Julia Discourse. 
+ (Unknown)","general","motivate"
+"Maybe Nick Cox has written something about this error? 
+ (Kabira Namit)","economics","motivate"
+"Nothing in the world is worth having or worth doing unless it means effort, pain, difficulty. I have never in my life envied a human being who led an easy life. I have envied a great many people who led difficult lives and led them well. 
+ (Theodore Roosevelt)","general","motivate"
+"I did not mess up the syntax. I just found 100 ways to specify it incorrectly. 
+ (Kabira Namit)","general","motivate"
+"It always seems impossible till it is done. 
+ (Nelson Mandela)","general","motivate"
+"If you were able to believe in Santa Claus for 8 years, you can believe in yourself for 5 minutes. 
+ (Unknown)","general","motivate"
+"I have failed over and over and over again in my life. And that is why I succeed. 
+ (Michael Jordan)","general","motivate"
+"Every Julia expert has had their fair share of errors. Keep at it! 
+ (Kabira Namit)","economics","motivate"
+"There are two kinds of people in this world: those who want to get things done and those who do not want to make mistakes. 
+ (John Maxwell)","general","motivate"
+"If we knew what we were doing, it would not be called research, would it? 
+ (Albert Einstein)","general","motivate"
+"We must accept finite disappointment but never lose infinite hope. 
+ (Martin Luther King)","general","motivate"
+"The only real mistake is the one from which we learn nothing. 
+ (Henry Ford)","general","motivate"
+"Try to live everyday like Elle Woods after Warner told her she was not smart enough for law school. 
+ (Marissa Kathryn)","general","motivate"
+"Failure is so important. We speak about success all the time. It is the ability to resist failure or use failure that often leads to greater success. I have met people who do not want to try for fear of failing. 
+ (Joanne K. Rowling)","general","motivate"
+"A person who never made a mistake never tried anything new. 
+ (Albert Einstein)","general","motivate"
+"Success consists of going from failure to failure without loss of enthusiasm. 
+ (Winston Churchill)","general","motivate"
+"There is beauty in every struggle that is your own. 
+ (Salvia Zeeshan)","general","demotivate"
+"All models are wrong but some are useful. 
+ (George Box)","general","demotivate"
 "Indeed but its unclear that you can take much consolation from that","general","demotivate"
 "Those last set of results you got: not exactly AER material are they? ","economics","demotivate"
 "Have you thought of trying economic theory? It worked out well for Paul Krugman.","economics","demotivate"
@@ -28,15 +49,18 @@
 "You need to stop thinking like a graduate student. Especially if you are one.","academia","demotivate"
 "John Ioannidis has got you sussed out. All of us in fact. We're doomed I tell you.","economics","demotivate"
 "Best not to dwell on what your R-using colleagues really think of you.","general,academia","demotivate"
-"Friends don't let friends use instrumental variables. \n (Unknown)","economics,academia","demotivate"
+"Friends don't let friends use instrumental variables. 
+ (Unknown)","economics,academia","demotivate"
 "This will be a lot easier to do in the next version of Julia!","general","demotivate"
 "The fact is most papers are rejected","academia","demotivate"
 "It's not too late to learn Python","general,academia","demotivate"
 "If only you had taken a few more math courses you could have been someone. You could have been a contender.","general,academia","demotivate"
 "Life is full of emptiness","general","demotivate"
-"Imagine how hard physics would be if electrons had feelings. \n (Richard Feynmann)","general,academia","demotivate"
+"Imagine how hard physics would be if electrons had feelings. 
+ (Richard Feynmann)","general,academia","demotivate"
 "Welcome to our world, Dick.","general","demotivate"
-"There are no routine statistical questions only questionable statistical routines. \n (David Cox)","economics,academia","demotivate"
+"There are no routine statistical questions only questionable statistical routines. 
+ (David Cox)","economics,academia","demotivate"
 "Here's looking at you, kid.","general","demotivate"
 "But our preferred model shows...  lmao, gets me everytime","general,academia,economics","demotivate"
 "Erode gormless sin is an anagram for regression models curiously enough","academia,economics","demotivate"

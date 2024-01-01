@@ -67,12 +67,6 @@ function quoteselector(quotelist::Vector{String})
     # Get random quote
     sel_quote = quotelist[rand(eachindex(quotelist))]
 
-    # Check if CSV.read added a second "\" in front of linebreaks and delete it if so
-    sel_quote = replace(sel_quote, "\\n" => "\n")
-
-    # There is probably a space after the linebreak. Drop it as well
-    sel_quote = replace(sel_quote, "\n " => "\n")
-
     # Return selected quote
     return sel_quote
 end
