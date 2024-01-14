@@ -13,7 +13,6 @@
 # Motivate function
 function motivate_me(;print_quote::Bool = true,category::Union{String,Array} = [])
     
-    println(pwd())
     # Run motivator function
     sel_quote = motivator(cate=category, types="motivate", print_quote=print_quote)
 
