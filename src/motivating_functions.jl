@@ -86,20 +86,7 @@ function loadquotes_mot(;cate::Union{String,Array}=[],types::String="motivate", 
 
         # Download new data if last download is older than 7 days
         if Day(today() - last_download_date) > Day(7) == true
-
-            try 
-                # Data URL (my Github data hub)
-                data_url = "https://raw.githubusercontent.com/MarkusTrunschke/MarkusDataHub/main/MotivationalQuotes.jl-Data/mot_quotes.csv"
-                
-                # Download quote CSV file and save
-                Downloads.download(data_url, quote_path)
-                
-                # Save today as the last download date
-                save(last_download_path, Dict("last_download_date" => today()))
-
-            catch
-                # Do nothing if download fails. Only continue to read in excisting file (worst case: shipped with package)
-            end
+            download_fnc()
         end
     end
 
@@ -122,4 +109,39 @@ function loadquotes_mot(;cate::Union{String,Array}=[],types::String="motivate", 
     
     # Return prepared list
     return mot_quotes
+end
+
+# Download fnc
+function download_fnc()
+
+    try 
+        # Data URL (my Github data hub)
+        data_url = "https://raw.githubusercontent.com/MarkusTrunschke/MarkusDataHub/main/MotivationalQuotes.jl-Data/mot_quotes.csv"
+            
+        # Download quote CSV file and save
+        Downloads.download(data_url, quote_path)
+
+        # Check signature of downloaded file
+        check_sign_fnc()
+            
+        # Save today as the last download date
+        save(last_download_path, Dict("last_download_date" => today()))
+
+    catch
+        # Do nothing if download fails. Only continue to read in excisting file (worst case: shipped with package)
+    end
+
+    # Return nothing b/c everything it has to do is saving the file
+    return nothing
+end
+
+# Check signature of the downloaded file fnc
+function check_sign_fnc()
+
+    # Hard-code public signature key
+    public_key = 
+    # CONTINUE HERE! THE PUBLIC KEY WILL BE HARD-CODED INTO THIS PACKAGE. THE PRIVATE KEY IS ONLY FOR ME. AND THE SIGNATURE WILL BE FOR DOWNLOAD ON MY GITHUB DATA REPOSITORY.
+    # THE CODE WILL VERIFY THE CSV FILE USING THE PUBLIC KEY AND THE SIGNATURE. THIS WORKS BECAUSE NO ONE BUT ME CAN GENERATE A SIGNATURE THAT FITS TO BOTH THE PUBLIC KEY AND THE CSV FILE.
+    # AT LEAST IN THEORY.
+
 end
