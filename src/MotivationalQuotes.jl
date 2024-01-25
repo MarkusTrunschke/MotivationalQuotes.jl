@@ -14,12 +14,12 @@
 module MotivationalQuotes
 
     # Include dependencies
-    using Random, DataFrames, CSV, Downloads, JLD2, FileIO, Dates
+    using Random, DataFrames, CSV, Downloads, JLD2, FileIO, Dates, CryptoSignatures, CryptoGroups
 
     # Include other code files
     include("motivating_functions.jl")
 
     # Write your package code here.
-    export motivate_me, demotivate_me
+    export motivate_me, demotivate_me, check_signature_fnc
 
 end

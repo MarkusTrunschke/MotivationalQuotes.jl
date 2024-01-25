@@ -86,7 +86,7 @@ function loadquotes_mot(;cate::Union{String,Array}=[],types::String="motivate", 
 
         # Download new data if last download is older than 7 days
         if Day(today() - last_download_date) > Day(7) == true
-            download_fnc()
+            download_fnc(quote_path)
         end
     end
 
@@ -112,18 +112,35 @@ function loadquotes_mot(;cate::Union{String,Array}=[],types::String="motivate", 
 end
 
 # Download fnc
-function download_fnc()
+function download_fnc(quote_path)
 
     try 
-        # Data URL (my Github data hub)
+        # Download URLs (my Github data hub)
         data_url = "https://raw.githubusercontent.com/MarkusTrunschke/MarkusDataHub/main/MotivationalQuotes.jl-Data/mot_quotes.csv"
-            
+        signature_url = "https://raw.githubusercontent.com/MarkusTrunschke/MarkusDataHub/main/MotivationalQuotes.jl-Data/signature_mot_quotes.jld2"
+        
+        # Define paths
+        signature_path = joinpath(@__DIR__, "data", "signature_mot_quotes.jld2")
+        quote_path_dl = joinpath(@__DIR__, "data", "mot_quotes_dl.csv")
+
         # Download quote CSV file and save
-        Downloads.download(data_url, quote_path)
+        Downloads.download(data_url, quote_path_dl)
+
+        # Download signature file
+        Downloads.download(signature_url, signature_path)
 
         # Check signature of downloaded file
-        check_sign_fnc()
-            
+        signature_mot_quotes = load(signature_path, "signature_mot_quotes")
+        
+        if check_signature_fnc(quote_path, signature_mot_quotes) == false
+            # If file could not be verified, delete both signature and csv file immediately
+            rm(quote_path_dl)
+            rm(signature_path)
+        else
+            # If it can be verified, replace old quotes file with downloaded one
+            mv(quote_path_dl, quote_path, force=true)
+        end
+        
         # Save today as the last download date
         save(last_download_path, Dict("last_download_date" => today()))
 
@@ -136,12 +153,24 @@ function download_fnc()
 end
 
 # Check signature of the downloaded file fnc
-function check_sign_fnc()
+function check_signature_fnc(file_path,sign)
 
     # Hard-code public signature key
-    public_key = 
-    # CONTINUE HERE! THE PUBLIC KEY WILL BE HARD-CODED INTO THIS PACKAGE. THE PRIVATE KEY IS ONLY FOR ME. AND THE SIGNATURE WILL BE FOR DOWNLOAD ON MY GITHUB DATA REPOSITORY.
-    # THE CODE WILL VERIFY THE CSV FILE USING THE PUBLIC KEY AND THE SIGNATURE. THIS WORKS BECAUSE NO ONE BUT ME CAN GENERATE A SIGNATURE THAT FITS TO BOTH THE PUBLIC KEY AND THE CSV FILE.
-    # AT LEAST IN THEORY.
+    public_key = UInt8[0x04, 0x30, 0xe7, 0x61, 0x5e, 0x46, 0xb1, 0xcc, 0x8b, 0xa5, 0x39, 0xb0, 0xe7, 0x06, 0xc3, 0x3d, 0x52, 0xf4, 0x3f, 0x3d, 0xe2, 0xa3, 0xb4, 0x67, 0xf8, 0x77, 0x81, 0x73, 0xd5, 0xae, 0x9c, 0x10, 0xcc, 0xe8, 0xe0, 0x72, 0x47, 0x56, 0x63, 0x77, 0x77, 0x08, 0xdf, 0x27, 0xfb, 0xea, 0x30, 0x06, 0x2b]
 
+    file = read(file_path, String)
+
+    # Define crypto algorithm
+    curve = CryptoGroups.curve("secp192r1")
+    ctx = ECDSAContext(curve, "sha1")
+
+    # Verify file
+    file_ok = false
+
+    if CryptoSignatures.verify(ctx, Vector{UInt8}(file), public_key, sign) == true
+        file_ok = true
+    end
+
+    # Return check result
+    return file_ok
 end
