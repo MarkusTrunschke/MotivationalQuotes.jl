@@ -20,8 +20,8 @@ You can select topics by using the `topics` argument and you can return the quot
 Currently, the only available topics are: general, academia, economics
 
 # Options
-The following options are available.
-`topics` allows to select a specific topic of quotes
+The following keyword arguments are available.
+`topics` allows to select a specific topic of quotes.
 `print_quote` (true/false) either prints the quote as output or only returns the quote. Default is `true`.
 `nodownload` (true/false) surpresses the attempt to download new quotes (once a week) from my DataHub. Default is `false`.
 
